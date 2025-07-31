@@ -16,10 +16,31 @@ button.addEventListener('click', function() {
 });
 
 function kartekle(name, tür) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'card-wrapper';
+
     const div = document.createElement('div');
     div.className = 'card';
-    div.appendChild(document.createTextNode(`Name: ${name}, Tür: ${tür}`));
-    bigdiv.appendChild(div);
-    document.body.appendChild(bigdiv);
     
+    const title = document.createElement('div');
+    title.className = 'card-title';
+    title.textContent = `Name: ${name}, Tür: ${tür}`;
+    div.appendChild(title);
+
+    const info = document.createElement('div');
+    info.className = 'info';
+    info.textContent = `Name: ${name}, Tür: ${tür}`;
+    wrapper.appendChild(div);
+    wrapper.appendChild(info);
+    bigdiv.appendChild(wrapper);
+
+    div.addEventListener("mouseenter", function() {
+    div.classList.add("active");
+    info.style.display = 'block';
+    });
+    div.addEventListener("mouseleave", function() {
+    div.classList.remove("active");
+    info.style.display = 'none';
+    });
 }
+
