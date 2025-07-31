@@ -59,7 +59,7 @@
     border: 2px solid black;
     animation: fadeIn 0.5s forwards;
     flex: 0 0 auto;
-    transition: transform 0.3s;
+    transition: transform 0.5s;
 }
 .card.active {
     transform: translateY(-10px);
@@ -81,6 +81,7 @@
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     background: #fff;
+    transition: transform 0.8;
 }
 .bigdiv {
     gap: 20px;
