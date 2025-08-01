@@ -21,6 +21,14 @@ function kartekle(name, tür) {
 
     const div = document.createElement('div');
     div.className = 'card';
+
+    const deletebtn = document.createElement('button');
+    deletebtn.className = 'deletebtn';
+    deletebtn.textContent = 'x';
+    div.appendChild(deletebtn);
+    deletebtn.addEventListener('click', function() {
+        wrapper.remove();
+    });
     
     const title = document.createElement('div');
     title.className = 'card-title';
@@ -34,13 +42,9 @@ function kartekle(name, tür) {
     wrapper.appendChild(info);
     bigdiv.appendChild(wrapper);
 
-    div.addEventListener("mouseenter", function() {
-    div.classList.add("active");
-    info.style.display = 'block';
-    });
-    div.addEventListener("mouseleave", function() {
-    div.classList.remove("active");
-    info.style.display = 'none';
+    div.addEventListener("click", function() {
+        div.classList.toggle("active");
+        info.style.display = div.classList.contains("active") ? "block" : "none";
     });
 }
 

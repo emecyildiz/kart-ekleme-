@@ -102,3 +102,16 @@
     from { opacity: 0; }
     to { opacity: 1; }
 }
+.deletebtn{
+    position: relative;
+    top: -95px;
+    left: 80px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 14px;
+    margin-top: 10px;
+}
